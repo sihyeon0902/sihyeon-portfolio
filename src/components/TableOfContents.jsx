@@ -2,7 +2,7 @@ const items = [
   { num: '01', title: 'IoT 스마트 도어락', sub: '아두이노 기반 RFID·키패드 잠금 사물함', color: '#22d3ee', href: '#iot' },
   { num: '02', title: 'JAVA 똘망은행', sub: 'Spring Boot + React + AWS 미니 은행 시스템', color: '#6366f1', href: '#java' },
   { num: '03', title: '오늘의 거래', sub: 'React + Firebase 수산물 거래 명세서', color: '#f472b6', href: '#react' },
-  { num: '04', title: '지능형 수조 관제 시스템', sub: 'YOLOv8 + Streamlit AI 물고기 모니터링 (완성 예정)', color: '#fb923c', href: '#aquarium', badge: '🔧 개발 중' },
+  { num: '04', title: '지능형 수조 관제 시스템', sub: 'YOLOv8 + Streamlit AI 물고기 모니터링', color: '#fb923c', href: '#aquarium' },
 ]
 
 export default function TableOfContents() {
