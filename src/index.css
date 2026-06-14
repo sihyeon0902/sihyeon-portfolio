@@ -61,21 +61,27 @@ body {
 
   .mobile-nav-list {
     overflow-x: auto !important;
-    width: 100% !important;
+    flex-wrap: nowrap !important;
     justify-content: flex-start !important;
     padding-bottom: 4px !important;
-    gap: 0.1rem !important;
+    gap: 0.5rem !important;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
 
   .mobile-nav-list::-webkit-scrollbar {
     display: none;
   }
 
+  .mobile-nav-list li {
+    flex-shrink: 0 !important;
+  }
+
   .mobile-nav-link {
     padding: 0.4rem 0.6rem !important;
     font-size: 0.75rem !important;
     white-space: nowrap !important;
+    display: block !important;
   }
 
   .mobile-padding-reduce {

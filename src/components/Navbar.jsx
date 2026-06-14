@@ -26,21 +26,23 @@ export default function Navbar({ active }) {
     transition: 'all .3s',
     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
     height: 64,
-    gap: '1rem'
+    gap: '1rem',
+    overflow: 'hidden'
   }
 
   return (
     <nav style={nav}>
-      <span style={{ fontFamily: "'JetBrains Mono', monospace", color: '#6366f1', fontWeight: 700, fontSize: '1.1rem', flexShrink: 0 }}>
+      <span style={{ fontFamily: "'JetBrains Mono', monospace", color: '#6366f1', fontWeight: 700, fontSize: '1.1rem', flexShrink: 0, whiteSpace: 'nowrap' }}>
         &lt;ASH /&gt;
       </span>
-      <ul className="mobile-nav-list" style={{ listStyle: 'none', display: 'flex', gap: '0.2rem', margin: 0, padding: 0 }}>
+      <ul className="mobile-nav-list" style={{ listStyle: 'none', display: 'flex', gap: '0.2rem', margin: 0, padding: 0, overflowX: 'auto', flexWrap: 'nowrap', width: '100%' }}>
         {links.map(l => (
-          <li key={l.id}>
+          <li key={l.id} style={{ flexShrink: 0 }}>
             <a
               href={`#${l.id}`}
               className="mobile-nav-link"
               style={{
+                display: 'inline-block',
                 padding: '0.4rem 0.85rem',
                 borderRadius: 8,
                 fontSize: '0.82rem',
@@ -48,6 +50,7 @@ export default function Navbar({ active }) {
                 letterSpacing: '0.05em',
                 textDecoration: 'none',
                 transition: 'all .2s',
+                whiteSpace: 'nowrap',
                 color: active === l.id ? '#fff' : '#94a3b8',
                 background: active === l.id ? 'rgba(99,102,241,0.25)' : 'transparent',
                 border: active === l.id ? '1px solid rgba(99,102,241,0.4)' : '1px solid transparent',
