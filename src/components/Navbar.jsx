@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 
 const links = [
-  { id: 'cover',     label: 'HOME' },
-  { id: 'toc',       label: '목차' },
-  { id: 'iot',       label: 'IoT' },
-  { id: 'java',      label: 'Java' },
-  { id: 'react',     label: 'React' },
-  { id: 'aquarium',  label: 'AI수조' },
+  { id: 'cover', label: 'HOME' },
+  { id: 'toc', label: '목차' },
+  { id: 'iot', label: 'IoT' },
+  { id: 'java', label: 'Java' },
+  { id: 'react', label: 'React' },
+  { id: 'aquarium', label: 'AI수조' },
 ]
 
 export default function Navbar({ active }) {
@@ -19,25 +19,27 @@ export default function Navbar({ active }) {
 
   const nav = {
     position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
-    padding: '0 2rem',
+    padding: '0 1rem',
     background: scrolled ? 'rgba(10,14,26,0.92)' : 'transparent',
     backdropFilter: scrolled ? 'blur(12px)' : 'none',
     borderBottom: scrolled ? '1px solid rgba(99,102,241,0.15)' : 'none',
     transition: 'all .3s',
     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
     height: 64,
+    gap: '1rem'
   }
 
   return (
     <nav style={nav}>
-      <span style={{ fontFamily: "'JetBrains Mono', monospace", color: '#6366f1', fontWeight: 700, fontSize: '1.1rem' }}>
+      <span style={{ fontFamily: "'JetBrains Mono', monospace", color: '#6366f1', fontWeight: 700, fontSize: '1.1rem', flexShrink: 0 }}>
         &lt;ASH /&gt;
       </span>
-      <ul style={{ listStyle: 'none', display: 'flex', gap: '0.2rem' }}>
+      <ul className="mobile-nav-list" style={{ listStyle: 'none', display: 'flex', gap: '0.2rem', margin: 0, padding: 0 }}>
         {links.map(l => (
           <li key={l.id}>
             <a
               href={`#${l.id}`}
+              className="mobile-nav-link"
               style={{
                 padding: '0.4rem 0.85rem',
                 borderRadius: 8,

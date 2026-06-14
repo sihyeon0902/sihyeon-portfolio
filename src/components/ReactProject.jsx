@@ -13,7 +13,7 @@ export default function ReactProject() {
     <section id="react" style={{ padding: '120px 2rem', background: 'var(--bg)' }}>
       <div style={{ maxWidth: 960, margin: '0 auto' }}>
         <SectionLabel>Project 03</SectionLabel>
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+        <div className="mobile-flex-col" style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
           <div style={{ flex: 1, minWidth: 280 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: '1rem' }}>
               <span style={{ fontSize: '2.5rem' }}>🐟</span>
@@ -35,7 +35,7 @@ export default function ReactProject() {
             </div>
           </div>
 
-          <div style={{ width: 220, background: 'linear-gradient(135deg, rgba(244,114,182,0.1), rgba(244,114,182,0.02))', border: '1px solid rgba(244,114,182,0.25)', borderRadius: 20, padding: '1.75rem', textAlign: 'center', flexShrink: 0 }}>
+          <div className="mobile-full-width" style={{ width: 220, background: 'linear-gradient(135deg, rgba(244,114,182,0.1), rgba(244,114,182,0.02))', border: '1px solid rgba(244,114,182,0.25)', borderRadius: 20, padding: '1.75rem', textAlign: 'center', flexShrink: 0 }}>
             <div style={{ fontSize: '3rem', marginBottom: '0.75rem' }}>🏪</div>
             <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '0.7rem', color: '#f472b6', marginBottom: '1rem' }}>FEATURES</div>
             {['원터치 입력', '자동 계산', '영수증 캡처', '메신저 공유', 'PWA 설치'].map(f => (
@@ -44,7 +44,6 @@ export default function ReactProject() {
           </div>
         </div>
 
-        {/* 데이터 플로우 */}
         <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: '2rem', marginBottom: '1.5rem' }}>
           <h3 style={{ fontWeight: 700, marginBottom: '1.5rem', fontSize: '1rem' }}>🔄 데이터 흐름</h3>
           <div style={{ display: 'flex', alignItems: 'center', gap: 0, overflowX: 'auto', paddingBottom: 8 }}>
@@ -62,17 +61,14 @@ export default function ReactProject() {
           </div>
         </div>
 
-        {/* 코드 하이라이트 */}
         <Card title="💡 핵심 코드 — 영수증 캡처 & 공유">
-          <CodeBlock>{`// useReceiptCapture.jsx
-const captureReceipt = useCallback(async (ref) => {
+          <CodeBlock>{`const captureReceipt = useCallback(async (ref) => {
   const canvas = await html2canvas(ref.current, { scale: 2 })
 
   canvas.toBlob(async (blob) => {
     const file = new File([blob], '거래명세서.png', { type: 'image/png' })
     const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent)
 
-    // 모바일: 네이티브 공유 시트 → PC: 자동 다운로드
     if (isMobile && navigator.share && navigator.canShare({ files: [file] })) {
       await navigator.share({ files: [file], title: '거래명세서 전송' })
     } else {
@@ -90,7 +86,7 @@ const captureReceipt = useCallback(async (ref) => {
 }
 
 function Tag({ children, color }) {
-  const r=parseInt(color.slice(1,3),16),g=parseInt(color.slice(3,5),16),b=parseInt(color.slice(5,7),16)
+  const r = parseInt(color.slice(1, 3), 16), g = parseInt(color.slice(3, 5), 16), b = parseInt(color.slice(5, 7), 16)
   return <span style={{ padding: '4px 12px', borderRadius: 100, fontSize: '0.78rem', fontWeight: 500, background: `rgba(${r},${g},${b},0.1)`, border: `1px solid rgba(${r},${g},${b},0.25)`, color }}>{children}</span>
 }
 function Card({ title, children }) {

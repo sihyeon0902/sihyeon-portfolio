@@ -20,7 +20,7 @@ export default function IoTProject() {
     <section id="iot" style={{ padding: '120px 2rem', background: 'var(--bg)' }}>
       <div style={{ maxWidth: 960, margin: '0 auto' }}>
         <SectionLabel>Project 01</SectionLabel>
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+        <div className="mobile-flex-col" style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
           <div style={{ flex: 1, minWidth: 280 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: '1rem' }}>
               <span style={{ fontSize: '2.5rem' }}>🔐</span>
@@ -41,8 +41,7 @@ export default function IoTProject() {
             <TeamBadge members={['조장·HardWare']} />
           </div>
 
-          {/* 일러스트 카드 */}
-          <div style={{ width: 260, background: 'linear-gradient(135deg, rgba(34,211,238,0.08), rgba(34,211,238,0.02))', border: '1px solid rgba(34,211,238,0.25)', borderRadius: 20, padding: '2rem', textAlign: 'center', flexShrink: 0 }}>
+          <div className="mobile-full-width" style={{ width: 260, background: 'linear-gradient(135deg, rgba(34,211,238,0.08), rgba(34,211,238,0.02))', border: '1px solid rgba(34,211,238,0.25)', borderRadius: 20, padding: '2rem', textAlign: 'center', flexShrink: 0 }}>
             <div style={{ fontSize: '5rem', marginBottom: '1rem' }}>🗄️</div>
             <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '0.75rem', color: '#22d3ee', marginBottom: '0.5rem' }}>STATUS</div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
@@ -53,9 +52,8 @@ export default function IoTProject() {
           </div>
         </div>
 
-        {/* 스펙 */}
         <Card title="🔧 시스템 구성">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px,1fr))', gap: '0.75rem' }}>
+          <div className="mobile-grid-1fr" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px,1fr))', gap: '0.75rem' }}>
             {specs.map(s => (
               <div key={s.label} style={{ display: 'flex', gap: 12, padding: '0.75rem 1rem', background: 'rgba(34,211,238,0.04)', borderRadius: 10, border: '1px solid rgba(34,211,238,0.1)' }}>
                 <span style={{ color: '#22d3ee', fontWeight: 600, minWidth: 60, fontSize: '0.82rem' }}>{s.label}</span>
@@ -65,7 +63,6 @@ export default function IoTProject() {
           </div>
         </Card>
 
-        {/* 타임라인 */}
         <Card title="📅 진행 과정">
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {timeline.map((t, i) => (
@@ -77,23 +74,20 @@ export default function IoTProject() {
           </div>
         </Card>
 
-        {/* 코드 하이라이트 */}
         <Card title="💡 핵심 코드 포인트">
-          <CodeBlock>{`// 비밀번호 일치 여부 확인 (Board 1)
-if (!strcmp(Data, Master)) {
+          <CodeBlock>{`if (!strcmp(Data, Master)) {
   lcd.print("DOOR OPEN");
-  digitalWrite(signalPin, HIGH); // 신호 → Board 2
+  digitalWrite(signalPin, HIGH);
   delay(500);
   digitalWrite(signalPin, LOW);
 } else {
   lcd.print("ERROR");
 }
 
-// RFID 카드 인식 (Board 2)
 if (rfid.uid.uidByte[0] == CARD1_0 && ...) {
-  myservo.write(90); // 서보모터 열림
+  myservo.write(90);
   delay(5000);
-  myservo.write(0);  // 서보모터 닫힘
+  myservo.write(0);
 }`}</CodeBlock>
         </Card>
       </div>

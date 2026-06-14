@@ -22,7 +22,7 @@ export default function JavaProject() {
     <section id="java" style={{ padding: '120px 2rem', background: 'var(--surface)' }}>
       <div style={{ maxWidth: 960, margin: '0 auto' }}>
         <SectionLabel>Project 02</SectionLabel>
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+        <div className="mobile-flex-col" style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
           <div style={{ flex: 1, minWidth: 280 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: '1rem' }}>
               <span style={{ fontSize: '2.5rem' }}>🏧</span>
@@ -42,7 +42,7 @@ export default function JavaProject() {
             <TeamBadge members={['FrontEnd 중심']} />
           </div>
 
-          <div style={{ width: 220, background: 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(99,102,241,0.03))', border: '1px solid rgba(99,102,241,0.25)', borderRadius: 20, padding: '1.75rem', textAlign: 'center', flexShrink: 0 }}>
+          <div className="mobile-full-width" style={{ width: 220, background: 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(99,102,241,0.03))', border: '1px solid rgba(99,102,241,0.25)', borderRadius: 20, padding: '1.75rem', textAlign: 'center', flexShrink: 0 }}>
             <div style={{ fontSize: '3.5rem', marginBottom: '0.75rem' }}>🏛️</div>
             <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '0.72rem', color: '#6366f1', marginBottom: '0.5rem' }}>ARCH</div>
             <div style={{ fontSize: '0.82rem', color: '#94a3b8', lineHeight: 1.8 }}>S3 → EC2 → RDS<br />3-Tier Architecture</div>
@@ -53,7 +53,6 @@ export default function JavaProject() {
           </div>
         </div>
 
-        {/* 테크 스택 */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px,1fr))', gap: '0.85rem', marginBottom: '1.5rem' }}>
           {stack.map(s => (
             <div key={s.name} style={{ padding: '1rem', borderRadius: 12, background: 'var(--surface2)', border: '1px solid var(--border)', textAlign: 'center' }}>
@@ -63,8 +62,7 @@ export default function JavaProject() {
           ))}
         </div>
 
-        {/* 주요 기능 */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px,1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+        <div className="mobile-grid-1fr" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px,1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
           {features.map(f => (
             <div key={f.title} style={{ padding: '1.5rem', borderRadius: 14, background: 'var(--surface2)', border: '1px solid var(--border)', transition: 'border-color .2s' }}
               onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(99,102,241,0.5)'}
@@ -77,7 +75,6 @@ export default function JavaProject() {
           ))}
         </div>
 
-        {/* 코드 하이라이트 */}
         <Card title="💡 핵심 로직 — 송금 트랜잭션">
           <CodeBlock>{`@Transactional
 public void transfer(String from, String to, Long amount) {
@@ -91,9 +88,8 @@ public void transfer(String from, String to, Long amount) {
   receiver.setBalance(receiver.getBalance() + amount);
   accountRepo.save(sender); accountRepo.save(receiver);
 
-  // 거래 내역 양방향 기록
   transactionRepo.save(buildTx(sender, "송금", -amount, to));
-  transactionRepo.save(buildTx(receiver, "입금",  amount, from));
+  transactionRepo.save(buildTx(receiver, "입금",   amount, from));
 }`}</CodeBlock>
         </Card>
       </div>

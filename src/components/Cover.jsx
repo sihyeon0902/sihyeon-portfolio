@@ -45,12 +45,10 @@ export default function Cover() {
     <section id="cover" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
       <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0 }} />
 
-      {/* 그라데이션 오브 */}
       <div style={{ position: 'absolute', top: '20%', left: '15%', width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)', filter: 'blur(40px)' }} />
       <div style={{ position: 'absolute', bottom: '20%', right: '15%', width: 300, height: 300, borderRadius: '50%', background: 'radial-gradient(circle, rgba(34,211,238,0.1) 0%, transparent 70%)', filter: 'blur(40px)' }} />
 
       <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: '0 1.5rem' }}>
-        {/* 배지 */}
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(99,102,241,0.12)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: 100, padding: '6px 18px', marginBottom: '2rem', fontSize: '0.82rem', color: '#a5b4fc' }}>
           <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#22d3ee', display: 'inline-block', animation: 'pulse 2s infinite' }} />
           PORTFOLIO 2024~ing
@@ -61,16 +59,17 @@ export default function Cover() {
           <span style={{ display: 'block', fontSize: '0.45em', fontWeight: 400, color: '#94a3b8', marginTop: '0.5rem', letterSpacing: '0.1em' }}>AHN SI HYEON</span>
         </h1>
 
-        <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: '#94a3b8', maxWidth: 520, margin: '0 auto 0.75rem', lineHeight: 1.7 }}>
+        <div style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: '#94a3b8', maxWidth: 520, margin: '0 auto 0.75rem', lineHeight: 1.7 }}>
           하드웨어부터 AI까지, 직접 만들며 배우는 개발자입니다.
-          <p>IoT · 풀스택 웹 · AI 비전까지 폭넓게 경험하며</p>
-          <p>현장의 문제를 기술로 해결하는 것을 즐깁니다.</p>
-        </p>
-        <p style={{ fontSize: '0.95rem', color: '#64748b', marginBottom: '3rem' }}>
-          📧 snrnekf3989@naver.com &nbsp;|&nbsp; 📱 010-7550-3989
-        </p>
+          <p style={{ margin: 0 }}>IoT · 풀스택 웹 · AI 비전까지 폭넓게 경험하며</p>
+          <p style={{ margin: 0 }}>현장의 문제를 기술로 해결하는 것을 즐깁니다.</p>
+        </div>
+        <div className="mobile-flex-col" style={{ fontSize: '0.95rem', color: '#64748b', marginBottom: '3rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+          <span>📧 snrnekf3989@naver.com</span>
+          <span className="mobile-hide-divider">|</span>
+          <span>📱 010-7550-3989</span>
+        </div>
 
-        {/* 스킬 태그 */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center', maxWidth: 600, margin: '0 auto 3rem' }}>
           {skills.map((s, i) => (
             <span key={s} style={{

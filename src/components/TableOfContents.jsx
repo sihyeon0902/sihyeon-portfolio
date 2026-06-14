@@ -1,3 +1,4 @@
+
 const items = [
   { num: '01', title: 'IoT 스마트 도어락', sub: '아두이노 기반 RFID·키패드 잠금 사물함', color: '#22d3ee', href: '#iot' },
   { num: '02', title: 'JAVA 똘망은행', sub: 'Spring Boot + React + AWS 미니 은행 시스템', color: '#6366f1', href: '#java' },
@@ -15,11 +16,11 @@ export default function TableOfContents() {
         </h2>
         <div style={{ display: 'grid', gap: '1rem' }}>
           {items.map(it => (
-            <a key={it.num} href={it.href} style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '1.5rem 2rem', borderRadius: 16, background: 'var(--surface2)', border: '1px solid var(--border)', transition: 'all .25s', color: 'inherit' }}
+            <a key={it.num} href={it.href} className="mobile-padding-reduce" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '1.5rem 2rem', borderRadius: 16, background: 'var(--surface2)', border: '1px solid var(--border)', transition: 'all .25s', color: 'inherit' }}
               onMouseEnter={e => { e.currentTarget.style.borderColor = it.color; e.currentTarget.style.transform = 'translateX(8px)'; e.currentTarget.style.background = `rgba(${hexToRgb(it.color)},0.05)` }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'none'; e.currentTarget.style.background = 'var(--surface2)' }}
             >
-              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '2rem', fontWeight: 700, color: it.color, opacity: 0.7, minWidth: 60 }}>{it.num}</span>
+              <span className="mobile-toc-num" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '2rem', fontWeight: 700, color: it.color, opacity: 0.7, minWidth: 60 }}>{it.num}</span>
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
                   <span style={{ fontWeight: 700, fontSize: '1.1rem' }}>{it.title}</span>
