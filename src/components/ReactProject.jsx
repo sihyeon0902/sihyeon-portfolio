@@ -22,11 +22,12 @@ export default function ReactProject() {
               </h2>
             </div>
             <p style={{ color: '#94a3b8', lineHeight: 1.9, marginBottom: '0.75rem' }}>
-              수산물 중매인의 수기 장부·종이 영수증을 디지털로 전환하는 현장 업무 앱입니다.
-              거래 명세서를 이미지로 캡처해 카카오톡 등 메신저로 즉시 공유할 수 있습니다.
+              수산물 중매인의 수기 장부·종이 영수증을 디지털로 전환하는 현장 업무 앱
+              거래 명세서를 이미지로 캡처해 카카오톡 등 메신저로 즉시 공유 가능
             </p>
             <p style={{ color: '#64748b', fontSize: '0.85rem', marginBottom: '1.5rem' }}>
               📎 React 기말 프로젝트 | Vercel 배포 + PWA 지원
+              Link: "https://receipt-app.vercel.app/"
             </p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: '1.5rem' }}>
               {['React', 'Context API', 'Firebase', 'Vercel', 'PWA', 'html2canvas', 'CSS Module'].map(t => (

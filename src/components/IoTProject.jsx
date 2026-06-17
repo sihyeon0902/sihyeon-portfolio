@@ -29,9 +29,9 @@ export default function IoTProject() {
               </h2>
             </div>
             <p style={{ color: '#94a3b8', lineHeight: 1.9, marginBottom: '1.5rem' }}>
-              아두이노 2개를 직렬 통신으로 연결하여 구현한 스마트 도어락 사물함입니다.
+              아두이노 2개를 직렬 통신으로 연결하여 구현한 스마트 도어락 사물함
               키패드로 비밀번호를 입력하거나 RFID 카드를 태그하면 서보모터로 잠금이 해제되며,
-              LCD를 통해 사용자에게 실시간 피드백을 제공합니다.
+              LCD를 통해 사용자에게 실시간 피드백 제공
             </p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: '1.5rem' }}>
               {['Arduino', 'C++', 'RFID-RC522', 'SoftwareSerial', 'LCD I2C', 'Servo'].map(t => (

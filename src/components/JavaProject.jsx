@@ -31,8 +31,8 @@ export default function JavaProject() {
               </h2>
             </div>
             <p style={{ color: '#94a3b8', lineHeight: 1.9, marginBottom: '1.5rem' }}>
-              "어르신도 쉽게 사용할 수 있는 간편 미니 은행"을 목표로 개발한 풀스택 프로젝트입니다.
-              Spring Boot 백엔드와 React 프론트엔드를 AWS에 배포하여 3-Tier 아키텍처를 직접 구현했습니다.
+              "어르신도 쉽게 사용할 수 있는 간편 미니 은행"을 목표로 개발한 풀스택 프로젝트
+              Spring Boot 백엔드와 React 프론트엔드를 AWS에 배포하여 3-Tier 아키텍처 직접 구현
             </p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: '1.5rem' }}>
               {['Java', 'Spring Boot', 'React', 'MySQL', 'AWS', 'REST API'].map(t => (

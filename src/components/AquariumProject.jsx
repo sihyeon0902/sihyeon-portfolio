@@ -23,8 +23,8 @@ export default function AquariumProject() {
               </h2>
             </div>
             <p style={{ color: '#94a3b8', lineHeight: 1.9, marginBottom: '1.5rem' }}>
-              수질 수치는 정상이지만 물고기는 아플 수 있다는 문제의식에서 출발했습니다.
-              기존 CCTV 사후 대응의 한계를 극복하기 위해, AI 비전 기술로 물고기의 실제 움직임을 24시간 분석하고 이상 행동을 즉각 감지하여 골든타임을 확보합니다.
+              수질 수치는 정상이지만 물고기는 아플 수 있다는 문제의식에서 출발한 프로젝트
+              기존 CCTV 사후 대응의 한계를 극복하기 위해, AI 비전 기술로 물고기의 실제 움직임을 24시간 분석하고 이상 행동을 즉각 감지하여 골든타임을 확보
             </p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {['React', 'FastAPI', 'YOLOv8', 'WebSocket', 'SQLite', 'AI Vision'].map(t => (
@@ -77,11 +77,11 @@ export default function AquariumProject() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             <div className="mobile-flex-col" style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
               <span style={{ background: 'rgba(251,146,60,0.15)', color: '#fb923c', borderRadius: 8, padding: '3px 12px', fontSize: '0.78rem', fontWeight: 600, whiteSpace: 'nowrap', marginTop: 1, textAlign: 'center' }}>실시간성 극대화</span>
-              <span style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>단순 라이브러리 사용을 넘어, 실시간 관제 환경에 맞춰 WebSocket 비동기 통신과 프레임 전송 주기를 제어하여 딜레이 없는 시스템을 구현했습니다.</span>
+              <span style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>단순 라이브러리 사용을 넘어, 실시간 관제 환경에 맞춰 WebSocket 비동기 통신과 프레임 전송 주기를 제어하여 딜레이 없는 시스템을 구현</span>
             </div>
             <div className="mobile-flex-col" style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
               <span style={{ background: 'rgba(251,146,60,0.15)', color: '#fb923c', borderRadius: 8, padding: '3px 12px', fontSize: '0.78rem', fontWeight: 600, whiteSpace: 'nowrap', marginTop: 1, textAlign: 'center' }}>시스템 확장성</span>
-              <span style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>단일 수조를 넘어, 향후 어종별 동적 임계값 자동 학습 기능과 Redis 인메모리 DB를 활용한 대규모 다중 수조(양식장) 통합 관제로 발전할 수 있는 기반을 마련했습니다.</span>
+              <span style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>단일 수조를 넘어, 향후 어종별 동적 임계값 자동 학습 기능과 Redis 인메모리 DB를 활용한 대규모 다중 수조(양식장) 통합 관제로 발전할 수 있는 기반 마련</span>
             </div>
           </div>
         </Card>
