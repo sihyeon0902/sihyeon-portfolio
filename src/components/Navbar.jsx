@@ -6,7 +6,7 @@ const links = [
   { id: 'iot', label: 'IoT' },
   { id: 'java', label: 'Java' },
   { id: 'react', label: 'React' },
-  { id: 'aquarium', label: 'AI수조' },
+  { id: 'aquarium', label: 'AI활용' },
 ]
 
 export default function Navbar({ active }) {
