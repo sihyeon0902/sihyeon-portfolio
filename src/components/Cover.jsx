@@ -62,7 +62,7 @@ export default function Cover() {
         <div style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: '#94a3b8', maxWidth: 520, margin: '0 auto 0.75rem', lineHeight: 1.7 }}>
           하드웨어부터 AI까지, 직접 만들며 배우는 개발자
           <p style={{ margin: 0 }}>IoT · 풀스택 웹 · AI 비전까지 폭넓게 경험하며</p>
-          <p style={{ margin: 0 }}>현장의 문제를 기술로 해결하는 것을 즐깁니다.</p>
+          <p style={{ margin: 0 }}>현장의 문제를 기술로 해결하는 것을 즐기는 개발자</p>
         </div>
         <div className="mobile-flex-col" style={{ fontSize: '0.95rem', color: '#64748b', marginBottom: '3rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
           <span>📧 snrnekf3989@naver.com</span>
